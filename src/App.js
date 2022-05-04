@@ -1,11 +1,9 @@
-import './App.css';
+import Header from './Components/Header'
 
 function App() {
   return (
     <div className="App">
-      <div className="content">
-        <h1 className="header">Abidoye Abiodun Work</h1>
-      </div>
+      <Header/>
     </div>
   );
 }
