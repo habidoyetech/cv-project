@@ -1,8 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
+import CvForm from './Cvform/Cvform';
 
 const Main = () => {
   return(
     <main className="cvMainContainer">
+      <CvForm/>
 
     </main>
   )
