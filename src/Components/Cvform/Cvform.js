@@ -1,10 +1,14 @@
 import React from 'react';
 import Personal from './Personal';
 
-const CvForm = () => {
+const CvForm = ({
+  cv,
+  onChangePersonal,
+  
+}) => {
   return (
     <div className="cvFormContainer">
-      <Personal/>
+      <Personal personalInfo={cv.personalInfo} onChange={onChangePersonal}/>
     </div>
   )
 }
