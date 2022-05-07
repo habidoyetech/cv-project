@@ -111,3 +111,28 @@ textarea {
 .description {
   grid-column: 1/3;
 }
+
+.file input {
+  font-size: 13px;
+}
+
+.experienceInputContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  gap: 10px;
+}
+
+.Delete {
+  grid-column: 1/3;
+  background-color: red;
+  color: white;
+  
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 5px;
+}
