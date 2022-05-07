@@ -1,5 +1,4 @@
 import Input from "../Utilities/Input"
-import FileInput from "../Utilities/FileInput"
 import TextArea from "../Utilities/TextArea"
 
 const Personal = ({personalInfo, onChange}) => {
@@ -35,7 +34,12 @@ const Personal = ({personalInfo, onChange}) => {
           onChange={(e) => onChange(e)}
           value={personalInfo.lastName}
         />
-        <FileInput onChange={(e) => onChange(e)}/>
+        <Input 
+          type='file'
+          name="file" 
+          placeholder="Photo" 
+          onChange={(e) => onChange(e)}
+        />
         <Input 
           type='text'
           name="address" 

@@ -15,7 +15,8 @@
   --light: #eee;
   --grey: gray;
   --lightactive: #aaa;
-
+  --white-bg: #ffffff;
+  --label-color: rgb(130, 139, 162);
 }
 
 body {
@@ -49,8 +50,8 @@ body {
   justify-content: space-between;
   gap: 3rem;
   max-width: 1800px;
-  padding: 4rem 8rem;
-  margin: 0 auto;
+  
+  width: 100%;
   margin-bottom: 3rem;
 }
 
@@ -58,12 +59,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 210mm;
+  width: 50%;
   padding: 2rem;
-  border-radius: 5px;
-  background-color: rgb(238, 238, 238);
-  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
-  margin: 0 auto;
+  background-color: var(--white-bg);
 }
 
 section {
@@ -74,39 +72,42 @@ section {
 }
 
 .personalInformationInputsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  gap: 10px;
 }
 
 input {
-  padding: 0.5rem;
-  border-radius: 5px;
-  border: 1px solid transparent;
+  padding: 12px 16px;
+  border-radius: 3px;
+  font-size: 16px;
   outline: none;
+  background-color: rgb(239, 242, 249);
 }
 
 input:focus, textarea:focus {
-  border: 1px solid var(--lightactive);
+  border-bottom: 2px solid blue;
 }
 
 label {
-  padding: 0.5rem;
-  border-radius: 5px;
-  border: 1px solid transparent;
-  background-color: #fff;
-}
-
-label > input {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  color: var(--label-color);
+  font-size: 12px;
+  line-height: 20px;
 }
 
 textarea {
-  height: 80px;
+  height: 150px;
   padding: 0.5rem;
   padding-right: 2rem;
-  border-radius: 5px;
+  border-radius: 3px;
   border: 1px solid transparent;
   resize: none;
   outline: none;
+  background-color: rgb(239, 242, 249);
+}
+
+.description {
+  grid-column: 1/3;
 }
