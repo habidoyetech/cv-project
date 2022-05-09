@@ -25,6 +25,10 @@ body {
 
 .headerContainer {
   background-color: var(--grey);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
 .headerWrapper {
@@ -32,11 +36,11 @@ body {
   display: flex;
   align-items: center;
   max-width: 1800px;
-  padding: 2.5rem 5rem;
+  padding: 2rem 3rem;
   margin: 0 auto;
   color:whitesmoke;
   justify-content: center;
-  height: 4rem;
+  height: 2rem;
   font-weight: 600;
 }
 
@@ -45,9 +49,7 @@ body {
 }
 
 .cvMainContainer {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  position: relative;
   gap: 3rem;
   max-width: 1800px;
   
@@ -62,6 +64,43 @@ body {
   width: 50%;
   padding: 2rem;
   background-color: var(--white-bg);
+}
+
+.cvPreviewContainer {
+  display: flex;
+  position: fixed;
+  left: 50%;
+  top: 3.5rem;
+  width: 50%;
+  z-index: 2;
+  padding: 10px;
+}
+
+.contentContainer{
+  background-color: #fff;
+  padding: 20px;
+  width: 70%;
+  font-size: 0.7rem;
+  overflow-wrap: break-word;
+  height: calc(100vh - 5rem);
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.asidepersonalInformation {
+  background-color: rgb(8,76,65);
+  color: white;
+  width: 30%;
+  padding: 20px;
+  font-size: 0.6rem;
+  overflow-wrap: break-word;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+} 
+
+.asidepersonalInformation section {
+  gap: 0;
+  padding: 0.5rem 0;
 }
 
 section {
@@ -89,6 +128,9 @@ input:focus, textarea:focus {
   border-bottom: 2px solid blue;
 }
 
+input:invalid {
+  border-bottom: 2px solid red;
+}
 label {
   display: flex;
   flex-direction: column;
@@ -136,4 +178,16 @@ button {
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.experience, 
+.professionalSummary, 
+.education,
+.subSectionWrapper {
+  gap: 0;
+}
+
+.experienceHead,
+.experience div {
+  padding: 0.1rem 0;
 }

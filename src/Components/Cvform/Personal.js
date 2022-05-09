@@ -14,6 +14,12 @@ const Personal = ({personalInfo, onChange}) => {
           value={personalInfo.title}
         />
         <Input 
+          type='file'
+          name="file" 
+          placeholder="Photo" 
+          onChange={(e) => onChange(e)}
+        />
+        <Input 
           type='text'
           name="firstName" 
           placeholder="First Name" 
@@ -34,18 +40,12 @@ const Personal = ({personalInfo, onChange}) => {
           onChange={(e) => onChange(e)}
           value={personalInfo.lastName}
         />
-        <Input 
-          type='file'
-          name="file" 
-          placeholder="Photo" 
+         <Input 
+          type='email'
+          name="email" 
+          placeholder="Email" 
           onChange={(e) => onChange(e)}
-        />
-        <Input 
-          type='text'
-          name="address" 
-          placeholder="Address" 
-          onChange={(e) => onChange(e)}
-          value={personalInfo.address}
+          value={personalInfo.email}
         />
         <Input 
           type='tel'
@@ -55,12 +55,34 @@ const Personal = ({personalInfo, onChange}) => {
           value={personalInfo.phoneNumber}
         />
         <Input 
-          type='email'
-          name="email" 
-          placeholder="Email" 
+          type='text'
+          name="country" 
+          placeholder="Country" 
           onChange={(e) => onChange(e)}
-          value={personalInfo.email}
+          value={personalInfo.country}
         />
+        <Input 
+          type='text'
+          name="city" 
+          placeholder="City" 
+          onChange={(e) => onChange(e)}
+          value={personalInfo.city}
+        />
+        <Input 
+          type='text'
+          name="address" 
+          placeholder="Address" 
+          onChange={(e) => onChange(e)}
+          value={personalInfo.address}
+        />
+        <Input 
+          type='text'
+          name="nationality" 
+          placeholder="Nationlity" 
+          onChange={(e) => onChange(e)}
+          value={personalInfo.nationality}
+        />
+       
         <Input 
           type='date'
           name="date" 

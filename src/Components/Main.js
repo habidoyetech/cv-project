@@ -3,6 +3,7 @@ import CvForm from './Cvform/Cvform';
 import emptyCV from './Utilities/emptyCv';
 import { v4 as uuidv4 } from 'uuid';
 import { useReactToPrint } from 'react-to-print';
+import CVPreview from './CVpreview/CVpreview';
 
 const Main = () => {
 
@@ -149,7 +150,7 @@ const Main = () => {
         onPrint={handlePrint}
         onReset={handleReset}
       />
-
+      <CVPreview cv={cv} ref={componentRef} />
     </main>
   )
 }

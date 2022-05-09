@@ -1,5 +1,6 @@
 import Button from "../Utilities/Button";
 import Input from "../Utilities/Input";
+import TextArea from "../Utilities/TextArea";
 
 const ExperienceItem = ({ id, experienceItem, onChange, onDelete}) => {
   return (
@@ -8,14 +9,14 @@ const ExperienceItem = ({ id, experienceItem, onChange, onDelete}) => {
         onChange={(e) => onChange(e, id)}
         type="text"
         name="position"
-        placeholder="Position"
+        placeholder="Job Title"
         value={experienceItem.position}
       />
       <Input
         onChange={(e) => onChange(e, id)}
         type="text"
         name="company"
-        placeholder="Company"
+        placeholder="Employer"
         value={experienceItem.company}
       />
       <Input
@@ -27,17 +28,23 @@ const ExperienceItem = ({ id, experienceItem, onChange, onDelete}) => {
       />
       <Input
         onChange={(e) => onChange(e, id)}
-        type="text"
+        type="date"
         name="from"
         placeholder="From"
         value={experienceItem.from}
       />
       <Input
         onChange={(e) => onChange(e, id)}
-        type="text"
+        type="date"
         name="to"
         placeholder="To"
         value={experienceItem.to}
+      />
+      <TextArea
+        placeholder="Job Description"
+        name= "description"
+        onChange={(e) => onChange(e, id)}
+        value={experienceItem.description}
       />
       <Button text="Delete" onClick={() => onDelete(id)}></Button>
     </div>

@@ -1,4 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
+import emptyAvatar from "../../assests/empty_avatar.png"
+
 
 const emptyCV = {
   personalInfo: {
@@ -7,7 +9,10 @@ const emptyCV = {
     title: "",
     date: "",
     middleName: "",
-    // photo: ,
+    country: "",
+    city: "",
+    nationality: "",
+    photo: emptyAvatar,
     address: "",
     phoneNumber: "",
     email: "",
@@ -21,6 +26,7 @@ const emptyCV = {
       city: "",
       from: "",
       to: "",
+      description: "",
     },
   ],
   education: [
