@@ -82,7 +82,48 @@ const Main = () => {
       return { ...prevState, experience: [...newExperience] }
     })
   }
-  console.log(emptyCV.experience)
+  
+  const handleChangeEducation = (e, id) => {
+    const { name, value } = e.target
+
+    setCv((prevState) => {
+      const newEducation = prevState.education.map((educationItem) => {
+        if (educationItem.id === id) {
+          return { ...educationItem, [name]: value }
+        }
+        return educationItem
+      })
+      return { ...prevState, education: [...newEducation] }
+    })
+  }
+
+  const handleAddEducation = () => {
+    setCv((prevState) => ({
+      ...prevState,
+      education: [
+        ...prevState.education,
+        {
+          id: uuidv4(),
+          universityName: '',
+          city: '',
+          degree: '',
+          subject: '',
+          from: '',
+          to: '',
+        },
+      ],
+    }))
+  }
+
+  const handleDeleteEducation = (id) => {
+    setCv((prevState) => {
+      const newEducation = prevState.education.filter(
+        (educationItem) => educationItem.id !== id
+      )
+      return { ...prevState, education: [...newEducation] }
+    })
+  }
+
 
   return(
     <main className="cvMainContainer">
@@ -92,6 +133,9 @@ const Main = () => {
         onChangeExperience={handleChangeExperience}
         onAddExperience={handleAddExperience}
         onDeleteExperience={handleDeleteExperience}
+        onChangeEducation={handleChangeEducation}
+        onAddEducation={handleAddEducation}
+        onDeleteEducation={handleDeleteEducation}
       />
 
     </main>

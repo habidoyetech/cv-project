@@ -116,7 +116,7 @@ textarea {
   font-size: 13px;
 }
 
-.experienceInputContainer {
+.experienceInputContainer, .educationInputContainer {
   display: grid;
   grid-template-columns: repeat(2, 50%);
   gap: 10px;
@@ -135,4 +135,5 @@ button {
   font-weight: 600;
   font-size: 1rem;
   border-radius: 5px;
+  cursor: pointer;
 }
