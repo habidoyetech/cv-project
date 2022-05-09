@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import CvForm from './Cvform/Cvform';
 import emptyCV from './Utilities/emptyCv';
 import { v4 as uuidv4 } from 'uuid';
+import { useReactToPrint } from 'react-to-print';
 
 const Main = () => {
 
@@ -124,6 +125,15 @@ const Main = () => {
     })
   }
 
+  const handleReset = () => {
+    setCv(emptyCV)
+  }
+
+  const componentRef = useRef()
+
+  // throws warning because react-to-print uses findDOMNode
+  const handlePrint = useReactToPrint({ content: () => componentRef.current })
+
 
   return(
     <main className="cvMainContainer">
@@ -136,6 +146,8 @@ const Main = () => {
         onChangeEducation={handleChangeEducation}
         onAddEducation={handleAddEducation}
         onDeleteEducation={handleDeleteEducation}
+        onPrint={handlePrint}
+        onReset={handleReset}
       />
 
     </main>

@@ -2,6 +2,7 @@ import React from 'react';
 import Personal from './Personal';
 import Experience from './Experience';
 import Education from './Education';
+import Button from '../Utilities/Button';
 
 const CvForm = ({
   cv,
@@ -11,7 +12,9 @@ const CvForm = ({
   onDeleteExperience,
   onChangeEducation,
   onAddEducation,
-  onDeleteEducation
+  onDeleteEducation,
+  onPrint,
+  onReset
 }) => {
   return (
     <div className="cvFormContainer">
@@ -28,6 +31,10 @@ const CvForm = ({
         onAdd={onAddEducation}
         onDelete={onDeleteEducation}
       />
+      <>
+        <Button text="Generate PDF" onClick={onPrint} primary></Button>
+        <Button text="Reset" onClick={onReset} red></Button>
+      </>
     </div>
   )
 }
