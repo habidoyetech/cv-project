@@ -1,7 +1,8 @@
 import PrevHeader from "./prevHeader";
+import { format } from "date-fns";
 
 const Aside = ({personalInfo}) => {
-
+  const dobFormat = personalInfo.date? format(new Date(personalInfo.date), 'dd MMM yyyy'): personalInfo.date;
   
   return (
     <aside className="asidepersonalInformation">
@@ -22,7 +23,7 @@ const Aside = ({personalInfo}) => {
       </section>
       <section>
         <h5>Date of Birth</h5>
-        <p>{personalInfo.date}</p>
+        <p>{dobFormat}</p>
       </section>
 
     </aside>

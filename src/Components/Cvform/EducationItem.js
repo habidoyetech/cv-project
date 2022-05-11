@@ -29,19 +29,19 @@ const EducationItem = ({ id, educationItem, onChange, onDelete }) => {
         onChange={(e) => onChange(e, id)}
         type="text"
         name="subject"
-        placeholder="Subject"
+        placeholder="Qualification"
         value={educationItem.subject}
       />
       <Input
         onChange={(e) => onChange(e, id)}
-        type="text"
+        type="month"
         name="from"
         placeholder="From"
         value={educationItem.from}
       />
       <Input
         onChange={(e) => onChange(e, id)}
-        type="text"
+        type="month"
         name="to"
         placeholder="To"
         value={educationItem.to}
